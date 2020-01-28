@@ -1,0 +1,19 @@
+{
+  "name": "templatebot",
+  "version": "1.0.0",
+  "description": "A DiscordJS-powered bot template.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salint/TemplateBot.git"
+  },
+  "author": "Salint",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/salint/TemplateBot/issues"
+  },
+  "homepage": "https://github.com/salint/TemplateBot#readme"
+}
