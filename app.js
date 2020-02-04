@@ -9,7 +9,7 @@ const Client = new Discord.Client();
 
 // Checks if the message is a command.
 function isCommand(message, command) {
-	if(message.content.split(' ')[0] == config.prefix + command) return true;
+	if(message.content.split(" ")[0] == config.prefix + command) return true;
 	else return false;
 }
 
@@ -23,18 +23,26 @@ Client.on("ready", function() {
 // "Message" event, runs when a user sends a message
 Client.on("message", function(msg) {
 	
-	const args = msg.content.substr(config.token.length).split(' ');
-	if(msg.member == null) return;
-	if(msg.author.bot) return;
+	const args = msg.content.substr(config.token.length).split(" ");
+	if(msg.member === null || msg.author.bot) {
+		
+		return;
+	}
 
 	if(isCommand(msg, "avatar")) {
 	
 		const Embed = new Discord.RichEmbed();
 		let user;
-		if(msg.mentions.users.first() == undefined) user = msg.author;
-		else user = msg.mentions.users.first();
+		if(msg.mentions.users.first() === undefined) {
+			user = msg.author;
+		}
+		else {
+			user = msg.mentions.users.first();
+		}
 
-		if(user.avatarURL == null) msg.reply("no avatar to display.");
+		if(user.avatarURL === null) {
+			msg.reply("no avatar to display.");
+		}
 
 		Embed.setTitle(user.username + "'s avatar");
 		Embed.setColor(config.color);
@@ -45,7 +53,9 @@ Client.on("message", function(msg) {
 	else if(isCommand(msg, "info")) {
 
 		const Embed = new Discord.RichEmbed();
-		if(msg.mentions.members.first() == undefined) msg.reply("please mention someone.");
+		if(msg.mentions.members.first() === undefined) {
+			msg.reply("please mention someone.");	
+		}
 		else {
 
 			const user = msg.mentions.members.first();
