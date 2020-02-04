@@ -9,8 +9,12 @@ const Client = new Discord.Client();
 
 // Checks if the message is a command.
 function isCommand(message, command) {
-	if(message.content.split(" ")[0] == config.prefix + command) return true;
-	else return false;
+	if(message.content.split(" ")[0] === config.prefix + command) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 // "Ready" event, runs when the bot starts.
@@ -33,7 +37,7 @@ Client.on("message", function(msg) {
 	
 		const Embed = new Discord.RichEmbed();
 		let user;
-		if(msg.mentions.users.first() === undefined) {
+		if(!msg.mentions.users.first()) {
 			user = msg.author;
 		}
 		else {
@@ -53,7 +57,7 @@ Client.on("message", function(msg) {
 	else if(isCommand(msg, "info")) {
 
 		const Embed = new Discord.RichEmbed();
-		if(msg.mentions.members.first() === undefined) {
+		if(!msg.mentions.members.first()) {
 			msg.reply("please mention someone.");	
 		}
 		else {
