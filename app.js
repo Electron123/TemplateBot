@@ -21,6 +21,7 @@ function isCommand(message, command) {
 Client.on("ready", function() {
 
 	console.log("Bot has started.");
+	Client.user.setActivity("the server", { Type: "WATCHING" });
 
 });
 
