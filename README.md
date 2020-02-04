@@ -1,9 +1,8 @@
 # TemplateBot
-#### A DiscordJS bot template 
 
 -----
 
-### What is this?
+### Information
 - I was kinda bored and saw that my github is empty so I thought about creating this template for anyone who wanna build on top of it, this template probably sucks and there are much better than this.
 
 ### Setting up
@@ -15,4 +14,4 @@ git clone https://github.com/Salint/TemplateBot.git
 - Edit the `token` property in `config.json` so it matches your Bot's token.
 - Start the bot by typing `node .` or `node app.js` through your Terminal.
 
-##### Enjoy!
+Enjoy!
