@@ -33,6 +33,7 @@ Client.on("message", function(msg) {
 		
 		return;
 	}
+	
 
 	if(isCommand(msg, "avatar")) {
 	
@@ -55,6 +56,10 @@ Client.on("message", function(msg) {
 		msg.channel.send(Embed);		
 		
 	}
+	else if(isCommand(msg, "test")){
+		msg.reply("Yes i am working bitch, why are you testing me");
+	}
+	
 	else if(isCommand(msg, "info")) {
 
 		const Embed = new Discord.RichEmbed();
